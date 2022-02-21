@@ -9,10 +9,12 @@ var createTaskHandler = function() {
   // stops the webpage from completing default behaviors- in this case, reloading the page with every form submission
   event.preventDefault();
 
+  var taskNameInput = document.querySelector("input[name='task-name']").value;
+
   // creates the variable li 
   var listItemEl = document.createElement("li");
   listItemEl.className = "task-item";
-  listItemEl.textContent = "This is a new task.";
+  listItemEl.textContent = taskNameInput;
 
   // adds the variable li to the ul
   tasksToDoEl.appendChild(listItemEl);
